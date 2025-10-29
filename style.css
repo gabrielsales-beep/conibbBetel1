@@ -1,0 +1,1183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+/* ==============================
+   VARIÁVEIS
+============================== */
+:root {
+  --primary-font: 'Inter', sans-serif;
+  --logo-font: "Funnel Sans", sans-serif;
+  --primary-color: #e0d3a4;
+  --primary-hover: #ffe085;
+  --text-color: #f5f5f5;
+  --text-secondary: #bfbfbf;
+  --text-muted: #ccc;
+  --background-dark: #141414;
+}
+
+/* ==============================
+   RESET GLOBAL
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  overflow-y: auto;
+  height: auto;
+}
+
+/* ==============================
+   SCROLL NORMAL
+============================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.snap-container {
+  height: auto;
+  overflow-y: visible;
+}
+
+.snap-section {
+  height: auto;
+  position: relative;
+}
+
+/* ==============================
+   HEADER E MAIN COM IMAGEM1 - FUNDO COMPLETO SEM CORTES
+============================== */
+.header-main-container {
+  background-image: url("imagem1.jpg");
+  background-size: cover; /* Mudei de 100% auto para cover */
+  background-position: center center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  background-color: #000;
+  width: 100%;
+  padding: 2rem 6% 0 6%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 155vh; /* Mantido 155vh */
+  overflow: hidden; /* Adicionado para evitar vazamentos */
+}
+/* ==============================
+   HEADER
+============================== */
+.header-container {
+  width: 100%;
+  padding: 5px 35px 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+}
+
+#logo{
+  width: 15%;
+}
+
+/* Linha do header */
+.header-line {
+  border: none;
+  border-bottom: 1.3px solid white;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-bottom: 0.1px;
+  font-weight: 600;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-hover);
+}
+
+/* ==============================
+   MAIN
+============================== */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 30px;
+  margin-top: 0; /* Removi a margem negativa */
+}
+
+.text-section {
+  max-width: 460px;
+  margin-top: 100px; /* Ajustei para um valor positivo menor */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title {
+  font-family: var(--logo-font);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: left;
+  
+  /* Cor dourada elegante */
+  color: #e0d3a4;
+  
+  /* Sombra suave para destaque */
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.3),
+    0 4px 8px rgba(0,0,0,0.2);
+  
+  /* Espaçamento entre letras */
+  letter-spacing: -0.5px;
+}
+
+/* Linha decorativa simples abaixo do título */
+.text-section h1 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.text-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: #e0d3a4;
+  border-radius: 1px;
+}
+
+/* Para mobile */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  .text-section h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+  }
+}
+
+.description {
+  font-size: clamp(0.9rem, 1vw, 1rem); 
+  line-height: 1;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background: var(--primary-hover);
+  color: #735d5b;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: flex-start;
+}
+
+.cta-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(224, 211, 107, 0.3);
+}
+
+/* ==============================
+   SECTION COM IMAGEM2 - LAYOUT CORRIGIDO
+============================== */
+.como-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 11%;
+  background-image: url('imagem2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Overlay para melhor legibilidade */
+.como-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.como-left, .como-right {
+  position: relative;
+  z-index: 2;
+}
+
+.como-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-box {
+  width: 100%;
+  max-width: 750px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.como-text {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: #f5f5f5;
+  max-width: 700px;
+}
+
+.como-right {
+  width: 355px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  bottom: 8rem;
+}
+
+.como-title {
+  font-family: var(--logo-font);
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 0.9;
+  color: #f5f5f5;
+  margin: 0 0 30px 0;
+  text-align: left;
+  letter-spacing: -0.8px;
+}
+
+.como-description {
+  max-width: 100%;
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-align: left;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  margin-bottom: 0;
+}
+
+/* ==============================
+   NOVA SECTION: PRIMEIRA IGREJA
+============================== */
+.igreja-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  padding: 80px 11%;
+  background-image: url('imagem3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+/* Overlay */
+.igreja-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Conteúdo acima do overlay */
+.igreja-left, .igreja-right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Lado esquerdo - texto */
+.igreja-left {
+  max-width: 30%;
+  bottom: 2.8rem; 
+}
+
+.igreja-title {
+  font-family: var(--logo-font);
+  font-weight: 800;
+  font-size: 3.6rem;
+  line-height: 0.95;
+  color: #f5f5f5;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.igreja-description {
+  max-width: 100%;
+  color: #f5f5f5;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Lado direito - vídeo */
+.igreja-right {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.igreja-video-box {
+  width: 100%;
+  max-width: 750px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+.igreja-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==============================
+   ANIMAÇÕES GLOBAIS
+============================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .header-main-container {
+    padding: 30px 50px 0 50px;
+  }
+
+  .main {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .cta-button {
+    align-self: center;
+  }
+
+  .como-section, .igreja-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .como-right, .igreja-left {
+    width: 100%;
+    align-items: center;
+  }
+
+  .como-title, .igreja-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .como-description, .igreja-description {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .video-box, .igreja-video-box {
+    max-width: 100%;
+  }
+}
+
+/* Celulares - DESIGN ANIMADO E MELHORADO */
+/* Celulares - SEM ANIMAÇÕES */
+@media (max-width: 600px) {
+  /* Header Mobile Sem Animações */
+  .header-main-container {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    padding: 15px 15px 0 15px;
+    height: 100vh;
+    background-image: url("imagem1-mobile.jpg");
+    background-size: cover;
+    background-position: center center;
+    justify-content: flex-start;
+    /* REMOVIDO: animation: fadeInUp 1s ease-out; */
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 0;
+    /* REMOVIDO: animation: slideInLeft 0.8s ease-out; */
+  }
+
+  #logo {
+    width: 120px;
+    margin-bottom: 10px;
+    /* REMOVIDO: animation: pulse 2s infinite; */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  }
+
+  .nav-list {
+    gap: 20px;
+    font-size: 0.85rem;
+    /* REMOVIDO: animation: slideInRight 0.8s ease-out 0.3s both; */
+  }
+
+  .nav-link {
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-hover);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .header-line {
+    width: 100%;
+    margin: 15px 0;
+    /* REMOVIDO: animation: slideInLeft 0.8s ease-out 0.5s both; */
+  }
+
+  .main {
+    padding: 0 15px;
+    height: auto;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    /* REMOVIDO: animation: fadeInUp 1s ease-out 0.7s both; */
+  }
+
+  .text-section {
+    max-width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    padding: 0 10px;
+    /* REMOVIDO: animation */
+  }
+
+  .title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin: 15px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    /* REMOVIDO: animation: float 3s ease-in-out infinite; */
+    text-align: center;
+    color: #e0d3a4;
+  }
+
+  /* Remove quebras de linha do description no mobile */
+  .description br {
+    display: none;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    /* REMOVIDO: animation: fadeInUp 1s ease-out 0.9s both; */
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    align-self: center;
+    width: 100%;
+    max-width: 280px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--primary-hover), #ffd700);
+    color: #5a4a42;
+    box-shadow: 0 6px 20px rgba(224, 211, 107, 0.4);
+    transition: all 0.4s ease;
+    /* REMOVIDO: animation: pulse 2s infinite 1.5s; */
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(224, 211, 107, 0.6);
+  }
+
+  /* Seção "Como tudo começou" - SEM ANIMAÇÕES */
+  .como-section {
+    flex-direction: column-reverse;
+    gap: 35px;
+    padding: 70px 20px;
+    min-height: auto;
+    background-image: url('imagem2-mobile.jpg');
+    /* REMOVIDO: animation: fadeInUp 1s ease-out; */
+  }
+
+  .como-right {
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    text-align: center;
+    order: 1;
+    /* REMOVIDO: animation: slideInLeft 0.8s ease-out both; */
+  }
+
+  .como-left {
+    order: 2;
+    width: 100%;
+    /* REMOVIDO: animation: slideInRight 0.8s ease-out 0.3s both; */
+  }
+
+  .como-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .como-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .video-box {
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .video-box:hover {
+    transform: scale(1.02);
+  }
+
+  .como-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 25px;
+    padding: 0 10px;
+    /* REMOVIDO: animation: fadeInUp 0.8s ease-out 0.5s both; */
+  }
+
+  /* Seção "Primeira Igreja" - SEM ANIMAÇÕES */
+  .igreja-section {
+    flex-direction: column-reverse;
+    gap: 35px;
+    padding: 70px 20px;
+    min-height: auto;
+    background-image: url('imagem3-mobile.jpg');
+    /* REMOVIDO: animation: fadeInUp 1s ease-out; */
+  }
+
+  .igreja-left {
+    max-width: 100%;
+    bottom: 0;
+    align-items: center;
+    text-align: center;
+    order: 1;
+    /* REMOVIDO: animation: slideInRight 0.8s ease-out both; */
+  }
+
+  .igreja-right {
+    width: 100%;
+    order: 2;
+    /* REMOVIDO: animation: slideInLeft 0.8s ease-out 0.3s both; */
+  }
+
+  .igreja-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .igreja-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .igreja-video-box {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .igreja-video-box:hover {
+    transform: scale(1.02);
+  }
+
+  /* Ajustes gerais para mobile */
+  .snap-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Overlays melhorados */
+  .como-section::before,
+  .igreja-section::before {
+    background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+  }
+
+  /* REMOVIDO: Efeito de entrada para todas as seções */
+  .snap-section {
+    opacity: 1; /* Garante que as seções estão visíveis */
+    /* REMOVIDO: animation: fadeInUp 1s ease-out forwards; */
+  }
+
+  /* REMOVIDO: Delays de animação */
+  /* .snap-section:nth-child(1) { animation-delay: 0.1s; } */
+  /* .snap-section:nth-child(2) { animation-delay: 0.3s; } */
+  /* .snap-section:nth-child(3) { animation-delay: 0.5s; } */
+}
+
+/* Mobile Pequeno (até 375px) - SEM ANIMAÇÕES */
+@media (max-width: 375px) {
+  .header-main-container {
+    padding: 10px 10px 0 10px;
+  }
+
+  .nav-list {
+    gap: 15px;
+    font-size: 0.8rem;
+  }
+
+  #logo {
+    width: 100px;
+    margin-bottom: 8px;
+  }
+
+  .text-section {
+    margin-top: 15px;
+  }
+
+  .title {
+    font-size: 1.9rem;
+    margin: 10px 0;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    max-width: 260px;
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Pequeno (até 375px) - OTIMIZADO */
+@media (max-width: 375px) {
+  .header-main-container {
+    padding: 20px 12px 0 12px;
+  }
+
+  .nav-list {
+    gap: 20px;
+    font-size: 0.85rem;
+  }
+
+  #logo {
+    width: 120px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .como-title,
+  .igreja-title {
+    font-size: 2.4rem;
+  }
+
+  .como-section,
+  .igreja-section {
+    padding: 60px 15px;
+  }
+
+  .cta-button {
+    max-width: 280px;
+    padding: 16px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Efeito de scroll suave para elementos */
+@media (prefers-reduced-motion: no-preference) {
+  .snap-section > * {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+}
+
+
+/* ==============================
+   SEÇÃO COM DOIS VÍDEOS E TÍTULO
+============================== */
+.videos-section {
+  background-image: url('imagem2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5%;
+  position: relative;
+}
+
+/* Overlay para melhor contraste */
+.videos-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.videos-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.videos-title {
+  font-family: var(--logo-font);
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  line-height: 1.1;
+}
+
+.videos-subtitle {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.videos-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.video-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+.video-box {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  max-width: 400px;
+}
+
+/* ==============================
+   RESPONSIVIDADE - DOIS VÍDEOS
+============================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .videos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .videos-title {
+    font-size: 3rem;
+  }
+  
+  .videos-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .video-column {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .videos-section {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+  
+  .videos-header {
+    margin-bottom: 40px;
+  }
+  
+  .videos-title {
+    font-size: 2.5rem;
+  }
+  
+  .videos-subtitle {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  
+  .videos-container {
+    gap: 40px;
+  }
+  
+  .video-caption {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  
+  .video-box {
+    border-radius: 8px;
+  }
+  
+  .video-box:hover {
+    transform: none; /* Remove transform no mobile */
+  }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 375px) {
+  .videos-section {
+    padding: 50px 15px;
+  }
+  
+  .videos-title {
+    font-size: 2.2rem;
+  }
+  
+  .videos-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ==============================
+   SEÇÃO INSTITUCIONAL - TÍTULO EM CIMA DO VÍDEO
+============================== */
+.institucional-section {
+  background-image: url('imagem3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 5%;
+  position: relative;
+}
+
+/* Overlay */
+.institucional-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.institucional-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.institucional-title {
+  font-family: var(--logo-font);
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.institucional-subtitle {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  display: block;
+  margin-top: 10px;
+}
+
+.institucional-video-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+.institucional-video-box {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.institucional-video-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.institucional-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==============================
+   RESPONSIVIDADE - SEÇÃO INSTITUCIONAL
+============================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .institucional-title {
+    font-size: 3.2rem;
+  }
+  
+  .institucional-subtitle {
+    font-size: 2rem;
+  }
+  
+  .institucional-video-box {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .institucional-section {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+  
+  .institucional-header {
+    margin-bottom: 40px;
+  }
+  
+  .institucional-title {
+    font-size: 2.5rem;
+  }
+  
+  .institucional-subtitle {
+    font-size: 1.6rem;
+    margin-top: 5px;
+  }
+  
+  .institucional-video-box {
+    border-radius: 8px;
+  }
+  
+  .institucional-video-box:hover {
+    transform: none;
+  }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 375px) {
+  .institucional-section {
+    padding: 50px 15px;
+  }
+  
+  .institucional-title {
+    font-size: 2.2rem;
+  }
+  
+  .institucional-subtitle {
+    font-size: 1.4rem;
+  }
+}
